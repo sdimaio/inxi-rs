@@ -3,7 +3,7 @@ members = ["crates/inxi-core", "crates/inxi-cli"]
 resolver = "2"
 
 [workspace.package]
-authors = ["Simone Di Maio"]
+authors = ["Simmaco Di Maio"]
 edition = "2024"
 license = "GPL-3.0-or-later"
 repository = "https://github.com/sdimaio/inxi-rs"

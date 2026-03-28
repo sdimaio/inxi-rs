@@ -11,6 +11,7 @@ Questa documentazione e' divisa in:
 - [Perche' Rust](perche-rust.md)
 - [Sicurezza](sicurezza.md)
 - [Roadmap](roadmap.md)
+- [Release 0.1.0-alpha.1](releases/0.1.0-alpha.1.md)
 
 ## Note di Ricerca
 

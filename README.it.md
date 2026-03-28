@@ -13,7 +13,7 @@ L'obiettivo del progetto e':
 - rendere espliciti fonti dati, warning e fallback
 - preparare il terreno per una futura TUI senza rifare il motore
 
-Il progetto e' mantenuto da Simone Di Maio ed e' anche un investimento tecnico
+Il progetto e' mantenuto da Simmaco Di Maio ed e' anche un investimento tecnico
 e personale su Rust come linguaggio di lungo periodo.
 
 ## Stato del Progetto

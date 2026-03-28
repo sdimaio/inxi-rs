@@ -39,7 +39,7 @@ Rust supports that trajectory better than a quick throwaway implementation.
 ## Maintainer Reasons
 
 This repository also reflects a deliberate personal direction by the maintainer,
-Simone Di Maio.
+Simmaco Di Maio.
 
 The maintainer comes from a long background across:
 

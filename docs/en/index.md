@@ -13,6 +13,7 @@ This documentation set is intentionally split in two layers:
 - [Safety Model](safety.md)
 - [Compatibility Review](compatibility.md)
 - [Roadmap](roadmap.md)
+- [Release 0.1.0-alpha.1](releases/0.1.0-alpha.1.md)
 
 ## Italian Documents
 

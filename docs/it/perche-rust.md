@@ -32,7 +32,7 @@ Rust e' molto adatto a questo tipo di progetto.
 
 ## Ragioni personali
 
-Per Simone Di Maio questo progetto e' anche un modo concreto per spostare in
+Per Simmaco Di Maio questo progetto e' anche un modo concreto per spostare in
 Rust una parte del proprio investimento tecnico futuro, dopo un percorso lungo
 che parte da Pascal/Object Pascal e C/C++, passa per Delphi e arriva a Java come
 linguaggio professionale principale.

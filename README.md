@@ -10,7 +10,7 @@ It is an independent Rust reimplementation focused on:
 - explicit source tracing and warnings
 - a future TUI-friendly architecture
 
-This project is maintained by Simone Di Maio and reflects a deliberate
+This project is maintained by Simmaco Di Maio and reflects a deliberate
 long-term investment in Rust as a systems language.
 
 `inxi-rs` is not an official port of `inxi` and is not affiliated with
