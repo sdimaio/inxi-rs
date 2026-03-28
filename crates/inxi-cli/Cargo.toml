@@ -1,0 +1,22 @@
+[package]
+name = "inxi-cli"
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+homepage.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+description = "CLI frontend for inxi-rs, a safety-first Rust system information tool for Linux."
+readme = "../../README.md"
+default-run = "inxi-rs"
+keywords = ["linux", "system-information", "cli", "inxi", "tui-ready"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+clap.workspace = true
+inxi-core = { path = "../inxi-core" }
+
+[[bin]]
+name = "inxi-rs"
+path = "src/main.rs"

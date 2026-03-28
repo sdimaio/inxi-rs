@@ -1,0 +1,2 @@
+00:02.0 "VGA compatible controller" "Intel Corporation" "UHD Graphics 620" -r02 "Example Corp" "Integrated Graphics"
+00:14.0 "USB controller" "Intel Corporation" "USB 3.1 xHCI Controller" -r11 "Example Corp" "USB 3.1 xHCI Controller"

@@ -1,0 +1,68 @@
+Meta:
+  Tool       inxi-rs 0.1.0-test on linux
+  Host       golden-host
+  Timestamp  2026-03-27T12:00:00Z
+
+Safety:
+  Mode       read_only
+  Writes     disabled
+  Shell      disabled
+  Network    disabled
+  Commands   whitelist_only
+
+System:
+  Distro     TestOS 1.0
+  Kernel     6.8.0-test
+  Arch       x86_64
+  Hostname   golden-host
+  Session    tty
+  Desktop    Turbo
+
+Machine:
+  Vendor     Lenovo
+  Product    ThinkPad X1 (Gen 9)
+  Board      Lenovo 20XWCTO1WW
+  Firmware   LENOVO N32ET76W
+
+CPU:
+  Model      Intel(R) Core(TM) i7-1185G7
+  Vendor     GenuineIntel
+  Topology   8 logical, 1 package(s), 4 core(s)/package, 2 thread(s)/core
+  Speed      1800 MHz (400-4800 MHz)
+
+Memory:
+  Total      16.0 GiB
+  Available  8.0 GiB
+  Used       8.0 GiB
+
+Graphics:
+  GPU        Intel Iris Xe [driver: i915]
+  Display    eDP-1 connected primary 1920x1200
+  Display    HDMI-1 disconnected
+
+Network:
+  Iface      eth0 ethernet up ipv4=192.168.1.20/24 ipv6=fe80::1/64
+  Iface      wlan0 wifi down
+
+Drives:
+  Drive      nvme0n1 Samsung PM9A1 (476.9 GiB) SSD
+  Drive      sda Backup Disk (931.5 GiB) HDD
+
+Partitions:
+  Part       nvme0n1p1 vfat /boot/efi total=512.0 MiB used=128.0 MiB (25%)
+  Part       nvme0n1p2 ext4 / total=237.5 GiB used=200.0 GiB (84%)
+
+Swap:
+  Swap       /swapfile total=8.0 GiB, used=1.0 GiB
+
+Info:
+  Uptime     1d 2h 3m
+  User       sdimaio
+  Shell      /usr/bin/bash
+  Terminal   xterm-256color
+  Locale     it_IT.UTF-8
+  Processes  312
+
+Warnings:
+  - [partial_data] Display metadata is partial without xrandr. (xrandr --query)
+  - [fallback_used] Used procfs fallback for network addresses. (/proc/net/if_inet6)

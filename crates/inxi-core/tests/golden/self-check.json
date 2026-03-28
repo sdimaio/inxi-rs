@@ -1,0 +1,185 @@
+{
+  "meta": {
+    "tool": "inxi-rs",
+    "version": "0.1.0-test",
+    "host": "golden-host",
+    "timestamp": "2026-03-27T12:00:00Z",
+    "platform": "linux"
+  },
+  "request": {
+    "requested_sections": [
+      "System",
+      "Machine",
+      "CPU",
+      "Memory",
+      "Graphics",
+      "Network",
+      "Drives",
+      "Partitions",
+      "Swap",
+      "Info"
+    ],
+    "detail": "extended",
+    "output": "json",
+    "filter_sensitive": true
+  },
+  "capabilities": {
+    "platform": "linux",
+    "hostname": "golden-host",
+    "is_root": false,
+    "has_display": true,
+    "display_protocol": "tty",
+    "commands": {
+      "ip": true,
+      "lsblk": true
+    },
+    "paths": {
+      "/proc/cpuinfo": true,
+      "/sys/class/net": true
+    }
+  },
+  "safety": {
+    "mode": "read_only",
+    "file_writes_allowed": false,
+    "shell_execution_allowed": false,
+    "network_access_allowed": false,
+    "privilege_escalation_allowed": false,
+    "external_commands_policy": "whitelist_only",
+    "audited_commands": [
+      "lsblk --json --bytes"
+    ],
+    "allowed_read_roots": [
+      "/proc",
+      "/sys"
+    ],
+    "trusted_command_roots": [
+      "/usr/bin"
+    ]
+  },
+  "sections": [
+    {
+      "name": "system",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/etc/os-release",
+        "/proc/sys/kernel/osrelease"
+      ]
+    },
+    {
+      "name": "machine",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/sys/class/dmi/id"
+      ]
+    },
+    {
+      "name": "cpu",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/proc/cpuinfo"
+      ]
+    },
+    {
+      "name": "memory",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/proc/meminfo"
+      ]
+    },
+    {
+      "name": "graphics",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [
+        "partial_data"
+      ],
+      "sources": [
+        "/sys/class/drm",
+        "lspci -mm"
+      ]
+    },
+    {
+      "name": "network",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": true,
+      "warning_codes": [
+        "fallback_used"
+      ],
+      "sources": [
+        "/sys/class/net",
+        "/proc/net/if_inet6"
+      ]
+    },
+    {
+      "name": "drives",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/sys/block",
+        "lsblk --json --bytes"
+      ]
+    },
+    {
+      "name": "partitions",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/proc/partitions",
+        "/proc/self/mounts"
+      ]
+    },
+    {
+      "name": "swap",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/proc/swaps"
+      ]
+    },
+    {
+      "name": "info",
+      "state": "ok",
+      "has_value": true,
+      "fallback_used": false,
+      "warning_codes": [],
+      "sources": [
+        "/proc/uptime",
+        "USER"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "code": "partial_data",
+      "message": "Display metadata is partial without xrandr.",
+      "section": "graphics",
+      "source": "xrandr --query"
+    },
+    {
+      "code": "fallback_used",
+      "message": "Used procfs fallback for network addresses.",
+      "section": "network",
+      "source": "/proc/net/if_inet6"
+    }
+  ]
+}

@@ -1,0 +1,335 @@
+{
+  "meta": {
+    "tool": "inxi-rs",
+    "version": "0.1.0-test",
+    "host": "golden-host",
+    "timestamp": "2026-03-27T12:00:00Z",
+    "platform": "linux"
+  },
+  "sections": {
+    "system": {
+      "state": "ok",
+      "value": {
+        "kernel": {
+          "os_type": "Linux",
+          "release": "6.8.0-test",
+          "version": "#1 SMP PREEMPT_DYNAMIC",
+          "architecture": "x86_64"
+        },
+        "distro": {
+          "id": "testos",
+          "name": "TestOS",
+          "version": "1.0",
+          "pretty_name": "TestOS 1.0"
+        },
+        "hostname": "golden-host",
+        "desktop": {
+          "session_type": "tty",
+          "current_desktop": "Turbo"
+        }
+      },
+      "sources": [
+        {
+          "kind": "file",
+          "location": "/etc/os-release"
+        },
+        {
+          "kind": "procfs",
+          "location": "/proc/sys/kernel/osrelease"
+        }
+      ]
+    },
+    "machine": {
+      "state": "ok",
+      "value": {
+        "vendor": "Lenovo",
+        "product_name": "ThinkPad X1",
+        "product_version": "Gen 9",
+        "board": {
+          "vendor": "Lenovo",
+          "name": "20XWCTO1WW"
+        },
+        "firmware": {
+          "vendor": "LENOVO",
+          "version": "N32ET76W"
+        }
+      },
+      "sources": [
+        {
+          "kind": "sysfs",
+          "location": "/sys/class/dmi/id"
+        }
+      ]
+    },
+    "cpu": {
+      "state": "ok",
+      "value": {
+        "vendor": "GenuineIntel",
+        "model_name": "Intel(R) Core(TM) i7-1185G7",
+        "architecture": "x86_64",
+        "topology": {
+          "logical_cpus": 8,
+          "physical_packages": 1,
+          "cores_per_package": 4,
+          "threads_per_core": 2
+        },
+        "speed": {
+          "current_mhz": 1800.0,
+          "min_mhz": 400.0,
+          "max_mhz": 4800.0
+        }
+      },
+      "sources": [
+        {
+          "kind": "procfs",
+          "location": "/proc/cpuinfo"
+        }
+      ]
+    },
+    "memory": {
+      "state": "ok",
+      "value": {
+        "total_bytes": 17179869184,
+        "available_bytes": 8589934592,
+        "used_bytes": 8589934592
+      },
+      "sources": [
+        {
+          "kind": "procfs",
+          "location": "/proc/meminfo"
+        }
+      ]
+    },
+    "graphics": {
+      "state": "ok",
+      "value": {
+        "gpus": [
+          {
+            "bus": "0000:00:02.0",
+            "vendor": "Intel",
+            "device": "Iris Xe",
+            "class": "VGA compatible controller",
+            "driver": "i915"
+          }
+        ],
+        "displays": [
+          {
+            "name": "eDP-1",
+            "status": "connected",
+            "primary": true,
+            "resolution": "1920x1200"
+          },
+          {
+            "name": "HDMI-1",
+            "status": "disconnected",
+            "primary": false
+          }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "sysfs",
+          "location": "/sys/class/drm"
+        },
+        {
+          "kind": "command",
+          "location": "lspci -mm"
+        }
+      ]
+    },
+    "network": {
+      "state": "ok",
+      "value": {
+        "interfaces": [
+          {
+            "name": "eth0",
+            "link_kind": "ethernet",
+            "state": "up",
+            "ipv4": [
+              "192.168.1.20/24"
+            ],
+            "ipv6": [
+              "fe80::1/64"
+            ]
+          },
+          {
+            "name": "wlan0",
+            "link_kind": "wifi",
+            "state": "down",
+            "ipv4": [],
+            "ipv6": []
+          }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "sysfs",
+          "location": "/sys/class/net"
+        },
+        {
+          "kind": "procfs",
+          "location": "/proc/net/if_inet6"
+        }
+      ]
+    },
+    "drives": {
+      "state": "ok",
+      "value": {
+        "drives": [
+          {
+            "name": "nvme0n1",
+            "path": "/dev/nvme0n1",
+            "size_bytes": 512110190592,
+            "model": "Samsung PM9A1",
+            "rotational": false
+          },
+          {
+            "name": "sda",
+            "path": "/dev/sda",
+            "size_bytes": 1000204886016,
+            "model": "Backup Disk",
+            "rotational": true
+          }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "sysfs",
+          "location": "/sys/block"
+        },
+        {
+          "kind": "command",
+          "location": "lsblk --json --bytes"
+        }
+      ]
+    },
+    "partitions": {
+      "state": "ok",
+      "value": {
+        "partitions": [
+          {
+            "name": "nvme0n1p1",
+            "path": "/dev/nvme0n1p1",
+            "filesystem": "vfat",
+            "mountpoint": "/boot/efi",
+            "size_bytes": 536870912,
+            "filesystem_size_bytes": 536870912,
+            "available_bytes": 402653184,
+            "used_bytes": 134217728,
+            "used_percent": 25,
+            "parent": "nvme0n1"
+          },
+          {
+            "name": "nvme0n1p2",
+            "path": "/dev/nvme0n1p2",
+            "filesystem": "ext4",
+            "mountpoint": "/",
+            "size_bytes": 255013683200,
+            "filesystem_size_bytes": 255013683200,
+            "available_bytes": 40265318400,
+            "used_bytes": 214748364800,
+            "used_percent": 84,
+            "parent": "nvme0n1"
+          }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "procfs",
+          "location": "/proc/partitions"
+        },
+        {
+          "kind": "procfs",
+          "location": "/proc/self/mounts"
+        }
+      ]
+    },
+    "swap": {
+      "state": "ok",
+      "value": {
+        "devices": [
+          {
+            "path": "/swapfile",
+            "size_bytes": 8589934592,
+            "used_bytes": 1073741824,
+            "priority": -2
+          }
+        ]
+      },
+      "sources": [
+        {
+          "kind": "procfs",
+          "location": "/proc/swaps"
+        }
+      ]
+    },
+    "info": {
+      "state": "ok",
+      "value": {
+        "uptime_seconds": 93784,
+        "shell": "/usr/bin/bash",
+        "user": "sdimaio",
+        "terminal": "xterm-256color",
+        "locale": "it_IT.UTF-8",
+        "process_count": 312
+      },
+      "sources": [
+        {
+          "kind": "procfs",
+          "location": "/proc/uptime"
+        },
+        {
+          "kind": "environment",
+          "location": "USER"
+        }
+      ]
+    }
+  },
+  "warnings": [
+    {
+      "code": "partial_data",
+      "message": "Display metadata is partial without xrandr.",
+      "section": "graphics",
+      "source": "xrandr --query"
+    },
+    {
+      "code": "fallback_used",
+      "message": "Used procfs fallback for network addresses.",
+      "section": "network",
+      "source": "/proc/net/if_inet6"
+    }
+  ],
+  "capabilities": {
+    "platform": "linux",
+    "hostname": "golden-host",
+    "is_root": false,
+    "has_display": true,
+    "display_protocol": "tty",
+    "commands": {
+      "ip": true,
+      "lsblk": true
+    },
+    "paths": {
+      "/proc/cpuinfo": true,
+      "/sys/class/net": true
+    }
+  },
+  "safety": {
+    "mode": "read_only",
+    "file_writes_allowed": false,
+    "shell_execution_allowed": false,
+    "network_access_allowed": false,
+    "privilege_escalation_allowed": false,
+    "external_commands_policy": "whitelist_only",
+    "audited_commands": [
+      "lsblk --json --bytes"
+    ],
+    "allowed_read_roots": [
+      "/proc",
+      "/sys"
+    ],
+    "trusted_command_roots": [
+      "/usr/bin"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+major minor  #blocks  name
+
+   8        0  976762584 sda
+   8        1  976760000 sda1
+ 259        0  976763904 nvme0n1
+ 259        1     524288 nvme0n1p1
+ 259        2  499581952 nvme0n1p2

@@ -1,0 +1,24 @@
+SelfCheck:
+  Requested  System, Machine, CPU, Memory, Graphics, Network, Drives, Partitions, Swap, Info
+  Detail     extended
+  Output     screen
+  Privacy    enabled
+
+Capabilities:
+  Commands   ip=yes lsblk=yes
+
+Sections:
+  system     state=ok value=yes fallback=no warnings=none sources=/etc/os-release, /proc/sys/kernel/osrelease
+  machine    state=ok value=yes fallback=no warnings=none sources=/sys/class/dmi/id
+  cpu        state=ok value=yes fallback=no warnings=none sources=/proc/cpuinfo
+  memory     state=ok value=yes fallback=no warnings=none sources=/proc/meminfo
+  graphics   state=ok value=yes fallback=no warnings=partial_data sources=/sys/class/drm, lspci -mm
+  network    state=ok value=yes fallback=yes warnings=fallback_used sources=/sys/class/net, /proc/net/if_inet6
+  drives     state=ok value=yes fallback=no warnings=none sources=/sys/block, lsblk --json --bytes
+  partitions state=ok value=yes fallback=no warnings=none sources=/proc/partitions, /proc/self/mounts
+  swap       state=ok value=yes fallback=no warnings=none sources=/proc/swaps
+  info       state=ok value=yes fallback=no warnings=none sources=/proc/uptime, USER
+
+Warnings:
+  - [graphics:partial_data] Display metadata is partial without xrandr.
+  - [network:fallback_used] Used procfs fallback for network addresses.

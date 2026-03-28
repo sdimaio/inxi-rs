@@ -1,0 +1,83 @@
+{
+  "blockdevices": [
+    {
+      "name": "nvme0n1",
+      "kname": "nvme0n1",
+      "type": "disk",
+      "size": 1000204886016,
+      "fstype": null,
+      "mountpoint": null,
+      "uuid": null,
+      "model": "Example SSD 1TB",
+      "vendor": "EXAMPLE",
+      "fsavail": null,
+      "fssize": null,
+      "fsused": null,
+      "fsuse%": null,
+      "children": [
+        {
+          "name": "nvme0n1p1",
+          "kname": "nvme0n1p1",
+          "type": "part",
+          "size": 536870912,
+          "fstype": "vfat",
+          "mountpoint": "/boot/efi",
+          "uuid": "AAAA-BBBB",
+          "model": null,
+          "vendor": null,
+          "fsavail": "530579456",
+          "fssize": "536870912",
+          "fsused": "6291456",
+          "fsuse%": "1%"
+        },
+        {
+          "name": "nvme0n1p2",
+          "kname": "nvme0n1p2",
+          "type": "part",
+          "size": 511571918848,
+          "fstype": "ext4",
+          "mountpoint": "/",
+          "uuid": "11111111-2222-3333-4444-555555555555",
+          "model": null,
+          "vendor": null,
+          "fsavail": "40265318400",
+          "fssize": "255013683200",
+          "fsused": "214748364800",
+          "fsuse%": "84%"
+        }
+      ]
+    },
+    {
+      "name": "sdb",
+      "kname": "sdb",
+      "type": "disk",
+      "size": 2000398934016,
+      "fstype": null,
+      "mountpoint": null,
+      "uuid": null,
+      "model": "Example External Drive",
+      "vendor": "EXAMPLE",
+      "fsavail": null,
+      "fssize": null,
+      "fsused": null,
+      "fsuse%": null,
+      "children": [
+        {
+          "name": "sdb1",
+          "kname": "sdb1",
+          "type": "part",
+          "size": 2000397795328,
+          "fstype": "ntfs",
+          "mountpoint": "/media/alice/BACKUP",
+          "uuid": "9999-AAAA",
+          "model": null,
+          "vendor": null,
+          "fsavail": "107374182400",
+          "fssize": "2000397795328",
+          "fsused": "1893023612928",
+          "fsuse%": "95%"
+        }
+      ]
+    }
+  ]
+}
